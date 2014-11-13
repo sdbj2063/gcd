@@ -140,7 +140,9 @@ C. Defines the data set url, download the file and get the date
 
 D. Unzips data file
 
-    Result is the creation of the /UCI HAR Dataset directory in the working directory informational text files in this subdirectory, and training and test files in subdirectories below /UCI HAR Dataset.
+    Result is the creation of the /UCI HAR Dataset directory in the working directory
+    informational text files in this subdirectory, and training and test files in 
+    subdirectories below /UCI HAR Dataset.
 
 E. Imports the features.txt and activity_labels.txt
 
