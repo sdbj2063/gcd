@@ -44,8 +44,9 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 # Platform Information:
 # ======================================
 
-## Oringinal script was run on the following system with RStudio.
-## Windows 7 home Premuius
+Oringinal script was run on the following system with RStudio.
+
+* Windows 7 home Premium
 ## Service Pack 1
 ## 64-bit OS
 ## 1.6 GHz processor
@@ -58,44 +59,31 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 ## R package "utils" 3.1.1
 ## R package "reshape2" 1.4
 
-## Summary of Data Used and Script Requirements:
-## ================================================
-## The original data unzips into your working directory in /UCI HAR Dataset with 
-## /train and /test subdirectories.
-## The data is loaded into a grid, with 561 variables, or columns, plus subject and 
-## activity labels completing the columns. The columns of data are common mathematical 
-## calculations on the raw data set.
+# Summary of Data Used and Script Requirements:
+# ================================================
+The original data unzips into your working directory in /UCI HAR Dataset with /train and /test subdirectories. The data is loaded into a grid, with 561 variables, or columns, plus subject and activity labels completing the columns. The columns of data are common mathematical calculations on the raw data set.
 
-## The sources for the rows of calculated data are X_test.txt and X_train.txt.
-## The sources for the row labels indicating to what activity code a row of data corresponds
-## are y_text.txt and y_train.txt.
-## The sources for the row labels indicating to what subject a row of data corresponds 
-## are subject_test.txt and subject_train.txt.
-## The source for the text names of the activity codes is activity_labels.txt.
-## The source for the variable, or column, labels is features.txt.
+The sources for the rows of calculated data are X_test.txt and X_train.txt. The sources for the row labels indicating to what activity code a row of data corresponds are y_text.txt and y_train.txt. The sources for the row labels indicating to what subject a row of data corresponds are subject_test.txt and subject_train.txt. The source for the text names of the activity codes is activity_labels.txt. The source for the variable, or column, labels is features.txt.
 
-## The R script must be installed in the user's working directory. It reads from and 
-## saves files to that path. The command to execute the script is "run_analysis()."
+The R script must be installed in the user's working directory. It reads from and saves files to that path. The command to execute the script is "run_analysis()."
 
-## Project Script Requirements:
-## ==============================
+# Project Script Requirements:
+# ==============================
 
-## The project script must perform five basic functions:
-## 1. Merge training and test sets into one data set.
-## 2. Extract measures on the mean and standard deviation for each measurement.
-## 3. Use descriptive activity names for the activities.
-## 4. Label the data with descriptive variable names.
-## 5. Create a second independent tidy data set with the average of each variable 
-##    for each activity and each subject.
+The project script must perform five basic functions:
 
-## This script fulfills these requirements by performing the following functions. 
-## The individual functions occur in alphabetical order in the script.
+1. Merge training and test sets into one data set.
+2. Extract measures on the mean and standard deviation for each measurement.
+3. Use descriptive activity names for the activities.
+4. Label the data with descriptive variable names.
+5. Create a second independent tidy data set with the average of each variable for each activity and each subject.
+ 
+This script fulfills these requirements by performing the following functions. The individual functions occur in alphabetical order in the script.
 
-## 1. Merge training and test sets into one data set.
-## A. Sets libraries for R to utilize.
-## B. Downloads the code book for the data file to the working directory. Retrieves the
-##    download date.
-## C. Downloads the compressed data file to the working directory. Retrieves the 
+1. Merge training and test sets into one data set.
+   A. Sets libraries for R to utilize.
+   B. Downloads the code book for the data file to the working directory. Retrieves the download date.
+   C. Downloads the compressed data file to the working directory. Retrieves the 
 ##    download date.
 ## D. Unzips the compressed data file to the working directory.
 ## E. Imports features.txt and activity_labels.txt into individual data sets.
