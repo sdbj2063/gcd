@@ -1,15 +1,15 @@
 README.md
 
-Project Information:
-##=================================
+## Project Information:
+## =================================
 
-## Getting and Cleaning Data Class
-## Johns Hopkins University and Coursera
-## Script for Project
-## November 2014
+Getting and Cleaning Data Class
+Johns Hopkins University and Coursera
+Script for Project
+November 2014
 
-Introduction to this README and the R Script:
-## ===============================
+# Introduction to this README and the R Script:
+# ===============================
 
 This README.md contains information about the script, how to operate it and how it meets
 the project requirements.
@@ -21,10 +21,10 @@ working directory.
 ## Introduction to Original Data Set:
 ## ======================================
 
-## This script utilizes the code book and data at the following URLs:
-## http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-## https://d396qusza40orc.cloudfront.net/
-##      getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+This script utilizes the code book and data at the following URLs:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+https://d396qusza40orc.cloudfront.net/
+      getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
 ## License to Original Data Set:
