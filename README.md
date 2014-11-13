@@ -49,6 +49,7 @@ Oringinal script was run on the following system with RStudio.
 * 64-bit OS
 * 1.6 GHz processor and 4.00 GB RAM
 
+
 * R version 3.1.1 (2014-07-10) -- "Sock it to Me"; Copyright (C) 2014 The R Foundation for Statistical Computing Platform: x86_64-w64-mingw32/x64 (64-bit)
  
 * R packages "utils" v. 3.1.1 and "reshape2" v. 1.4
