@@ -3,11 +3,9 @@ README.md
 # Project Information:
 # ======================================
 
-Getting and Cleaning Data Class
+Getting and Cleaning Data Class offered by Johns Hopkins University through Coursera
 
-Johns Hopkins University and Coursera
-
-Script for Project
+run_analysis.R Script for Project
 
 November 2014
 
@@ -51,13 +49,12 @@ Oringinal script was run on the following system with RStudio.
 * 64-bit OS
 * 1.6 GHz processor
 * 4.00 GB RAM
- 
-* R version 3.1.1 (2014-07-10) -- "Sock it to Me"
-* Copyright (C) 2014 The R Foundation for Statistical Computing
-* Platform: x86_64-w64-mingw32/x64 (64-bit)
 
-* R package "utils" 3.1.1
-* R package "reshape2" 1.4
+* R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+* 1Copyright (C) 2014 The R Foundation for Statistical Computing
+* latform: x86_64-w64-mingw32/x64 (64-bit)
+ 
+* R packages "utils" v. 3.1.1 and "reshape2" v. 1.4
 
 
 # Summary of Data Used and Script Requirements:
