@@ -1,22 +1,22 @@
 README.md
 
 Project Information:
-====================================================
+##=================================
 
 ## Getting and Cleaning Data Class
 ## Johns Hopkins University and Coursera
 ## Script for Project
 ## November 2014
 
-## Introduction to this README and the R Script:
-## ====================================================
+Introduction to this README and the R Script:
+## ===============================
 
-## This README.md contains information about the script, how to operate it and how it meets
-## the project requirements.
-## The associated R script is run_analysis.R and must reside in the user's working directory.
-## The code book for this project is CodeBook.md.
-## The script generates a space delimited text file gcd_tidy_data_set.txt in the user's
-## working directory.
+This README.md contains information about the script, how to operate it and how it meets
+the project requirements.
+The associated R script is run_analysis.R and must reside in the user's working directory.
+The code book for this project is CodeBook.md.
+The script generates a space delimited text file gcd_tidy_data_set.txt in the user's
+working directory.
 
 ## Introduction to Original Data Set:
 ## ======================================
