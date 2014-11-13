@@ -1,7 +1,7 @@
 README.md
 
-## Project Information:
-## ====================================================
+Project Information:
+====================================================
 
 ## Getting and Cleaning Data Class
 ## Johns Hopkins University and Coursera
