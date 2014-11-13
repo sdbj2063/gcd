@@ -146,23 +146,35 @@ D. Unzips data file
 
 E. Imports the features.txt and activity_labels.txt
 
-    Results are two data frames. The features data frame has 2 variables with 561 rows. The activity labels data frame has 2 variables with 6 rows.
+    Results are two data frames. The features data frame has 2 variables with 561 rows. 
+    The activity labels data frame has 2 variables with 6 rows.
 
 F. Imports the subject_test.txt and subject_train.txt. Creates super set.
 
-    Results are two data frames. The test data frame has 1 variable with 2947 rows. The train data frame has 1 variable with 7352 rows. Result is one super set data frame with test and train records in that order with 1 variable, or column, and 10299 rows.
+    Results are two data frames. The test data frame has 1 variable with 2947 rows. 
+    The train data frame has 1 variable with 7352 rows. 
+    Result is one super set data frame with test and train records in that order 
+    with 1 variable, or column, and 10299 rows.
 
 G. Imports the x_test.txt and x_train.txt. Creates super set.
 
-	Results are two data frames. The test data frame has 561 variables with 2947 rows. The train data frame has 561 variables with 7352 rows. Result is one super set data frame with test and train records in that order with 561 variables and 10299 rows.
+	Results are two data frames. The test data frame has 561 variables with 2947 rows. 
+	The train data frame has 561 variables with 7352 rows. 
+	Result is one super set data frame with test and train records in that order 
+	with 561 variables and 10299 rows.
 
 H. Imports the y_test.txt and y_train.txt
 
-	Results are two data frames. The test data frame has 1 variable with 2947 rows. The train data frame has 1 variable with 7352 rows. Result is one super set data frame with test and train records in that order with 1 variable, or column, and 10299 rows.
+	Results are two data frames. The test data frame has 1 variable with 2947 rows. 
+	The train data frame has 1 variable with 7352 rows. 
+	Result is one super set data frame with test and train records in that order 
+	with 1 variable, or column, and 10299 rows.
 
 I. Creates human-readable feature labels for column names.
 
-	Copies names into third column of my_features. Process third column using sub() to replace the characters below with words. Word definitions obtained from README.txt and features_info.txt files and original data developers' description.
+	Copies names into third column of my_features. Process third column 
+	using sub() to replace the characters below with words. Word definitions obtained 
+	from README.txt and features_info.txt files and original data developers' description.
 	
 	I made a deliberate decision to replace only the first instance of a string to capture f, t.
 	* Focused on variables with mean() or std() in the name.
@@ -190,7 +202,9 @@ J. Assigns my_features labels to column names
 
 K. Extracts the variable calculations columns for mean() and std()
 
-	To fulfill the project requirement to take the measurements on the mean and standard deviation for the measurements, I used variables with mean() and std().  MeanFreq() is another type of measurement.
+	To fulfill the project requirement to take the measurements on the mean and 
+	standard deviation for the measurements, I used variables with mean() and std().  
+	MeanFreq() is another type of measurement.
 
 	* mean() has 33 variables, or columns.
 	* std() has 33  variables, or columns.
@@ -207,17 +221,23 @@ L. Binds the my_y_axis and my_x_axis2 data sets.
 
 M. Binds my_subjects as a column to my_big_data sets.
 
-	Result is one set with 68 columns and 10299 rows. Assigns "SubjectCode" and "ActivityCode" as names to the first two columns.
+	Result is one set with 68 columns and 10299 rows. Assigns "SubjectCode" 
+	and "ActivityCode" as names to the first two columns.
 
 N. Calculates the mean for each variable
 
-	Uses melt() to create a manageable data frame with grouping by SubjectCode and ActivityCode.
+	Uses melt() to create a manageable data frame with grouping by SubjectCode 
+	and ActivityCode.
 	Uses dcast() to apply the mean calculation to each group of data.
-	Result is my_tidy_data set listing all subject codes, each with an activity code and a row of mean value calculations for each variable.
+	Result is my_tidy_data set listing all subject codes, each with an activity code 
+	and a row of mean value calculations for each variable.
 
 O. Replaces activity codes with activity labels.
 
-	Creates a factor list of the activity codes. Uses level() to replace factor level numbers with associated activity label text. Orders SubjectCode and ActivityCode columns as columns 1 and 2 in data set. Removes the old SubjectCode and ActivityCode columns. Recasts factor column as character column. 
+	Creates a factor list of the activity codes. Uses level() to replace factor 
+	level numbers with associated activity label text. Orders SubjectCode and 
+	ActivityCode columns as columns 1 and 2 in data set. Removes the old SubjectCode 
+	and ActivityCode columns. Recasts factor column as character column. 
 	Result is one set with 68 columns and 10299 rows.
 
 P. Writes the tidy data
