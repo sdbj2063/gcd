@@ -150,12 +150,9 @@ F. Imports the subject_test.txt and subject_train.txt. Creates super set.
 
     Results are two data frames. The test data frame has 1 variable with 2947 rows. The train data frame has 1 variable with 7352 rows. Result is one super set data frame with test and train records in that order with 1 variable, or column, and 10299 rows.
 
-## G. Imports the x_test.txt and x_train.txt. Creates super set.
-##    Results are two data frames.
-##    The test data frame has 561 variables with 2947 rows.
-##    The train data frame has 561 variables with 7352 rows.
-##    Result is one super set data frame with test and train records in that order with
-##    561 variables and 10299 rows.
+G. Imports the x_test.txt and x_train.txt. Creates super set.
+
+	Results are two data frames. The test data frame has 561 variables with 2947 rows. The train data frame has 561 variables with 7352 rows. Result is one super set data frame with test and train records in that order with 561 variables and 10299 rows.
 
 ## H. Imports the y_test.txt and y_train.txt
 ##    Results are two data frames.
