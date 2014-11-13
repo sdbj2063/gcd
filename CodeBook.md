@@ -1,5 +1,7 @@
 Getting and Cleaning Data Course
+
 Presented by Johns Hopkins University through Coursera
+
 November 2014
 
 Code Book for Course Project
