@@ -1,7 +1,7 @@
 README.md
 
 # Project Information:
-# =================================
+# ==================================
 
 Getting and Cleaning Data Class
 
@@ -12,7 +12,7 @@ Script for Project
 November 2014
 
 # Introduction to this README and the R Script:
-# ===============================
+# ==================================
 
 This README.md contains information about the script, how to operate it and how it meets
 the project requirements.
@@ -22,7 +22,7 @@ The script generates a space delimited text file gcd_tidy_data_set.txt in the us
 working directory.
 
 # Introduction to Original Data Set:
-# ======================================
+# ==================================
 
 This script utilizes the code book and data at the following URLs:
 
@@ -47,20 +47,20 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 Oringinal script was run on the following system with RStudio.
 
 * Windows 7 home Premium
-## Service Pack 1
-## 64-bit OS
-## 1.6 GHz processor
-## 4.00 GB RAM
-
-## R version 3.1.1 (2014-07-10) -- "Sock it to Me"
-## Copyright (C) 2014 The R Foundation for Statistical Computing
-## Platform: x86_64-w64-mingw32/x64 (64-bit)
-
-## R package "utils" 3.1.1
-## R package "reshape2" 1.4
+* Service Pack 1
+* 64-bit OS
+* 1.6 GHz processor
+* 4.00 GB RAM
+ 
+* R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+* Copyright (C) 2014 The R Foundation for Statistical Computing
+* Platform: x86_64-w64-mingw32/x64 (64-bit)
+ 
+* R package "utils" 3.1.1
+* R package "reshape2" 1.4
 
 # Summary of Data Used and Script Requirements:
-# ================================================
+# ======================================
 The original data unzips into your working directory in /UCI HAR Dataset with /train and /test subdirectories. The data is loaded into a grid, with 561 variables, or columns, plus subject and activity labels completing the columns. The columns of data are common mathematical calculations on the raw data set.
 
 The sources for the rows of calculated data are X_test.txt and X_train.txt. The sources for the row labels indicating to what activity code a row of data corresponds are y_text.txt and y_train.txt. The sources for the row labels indicating to what subject a row of data corresponds are subject_test.txt and subject_train.txt. The source for the text names of the activity codes is activity_labels.txt. The source for the variable, or column, labels is features.txt.
@@ -68,7 +68,7 @@ The sources for the rows of calculated data are X_test.txt and X_train.txt. The 
 The R script must be installed in the user's working directory. It reads from and saves files to that path. The command to execute the script is "run_analysis()."
 
 # Project Script Requirements:
-# ==============================
+# ======================================
 
 The project script must perform five basic functions:
 
@@ -81,17 +81,20 @@ The project script must perform five basic functions:
 This script fulfills these requirements by performing the following functions. The individual functions occur in alphabetical order in the script.
 
 1. Merge training and test sets into one data set.
-   A. Sets libraries for R to utilize.
-   B. Downloads the code book for the data file to the working directory. Retrieves the download date.
-   C. Downloads the compressed data file to the working directory. Retrieves the 
-##    download date.
-## D. Unzips the compressed data file to the working directory.
-## E. Imports features.txt and activity_labels.txt into individual data sets.
-## F. Imports subject_test.txt and subject_train.txt and creates one super data set.
-## G. Imports x_test.txt and x_train.txt and creates one super x_axis data set. 
-## H. Imports y_test.txt and y_train.txt and creates one super y_axis data set.
-## L. Binds the activity list in y_axis and the x_axis data sets into big_data data set.
-## M. Binds train and test subject ids to the big_data data set.
+
+    A. Sets libraries for R to utilize.
+
+    B. Downloads the code book for the data file to the working directory. Retrieves the download date.
+   
+    C. Downloads the compressed data file to the working directory. Retrieves the download date.
+    D. Unzips the compressed data file to the working directory.
+   
+    E. Imports features.txt and activity_labels.txt into individual data sets.
+    F. Imports subject_test.txt and subject_train.txt and creates one super data set.
+    G. Imports x_test.txt and x_train.txt and creates one super x_axis data set.
+    H. Imports y_test.txt and y_train.txt and creates one super y_axis data set.
+    L. Binds the activity list in y_axis and the x_axis data sets into big_data data set.
+    M. Binds train and test subject ids to the big_data data set.
 
 ## 2. Extract measures on the mean and standard deviation for each measurement.
 ## K. Extracts the measurement columns on the mean and standard deviation for each
@@ -112,7 +115,7 @@ This script fulfills these requirements by performing the following functions. T
    
 
 ## Working Code Comments:
-## =============================== 
+# ======================================
 
 ## A. Defines the libraries to use
 
