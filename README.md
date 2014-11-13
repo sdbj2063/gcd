@@ -61,7 +61,7 @@ Oringinal script was run on the following system with RStudio.
 
 
 # Summary of Data Used and Script Requirements:
-# ===============================
+# ======================================
 The original data unzips into your working directory in /UCI HAR Dataset with /train and /test subdirectories. The data is loaded into a grid, with 561 variables, or columns, plus subject and activity labels completing the columns. The columns of data are common mathematical calculations on the raw data set.
 
 The sources for the rows of calculated data are X_test.txt and X_train.txt. The sources for the row labels indicating to what activity code a row of data corresponds are y_text.txt and y_train.txt. The sources for the row labels indicating to what subject a row of data corresponds are subject_test.txt and subject_train.txt. The source for the text names of the activity codes is activity_labels.txt. The source for the variable, or column, labels is features.txt.
@@ -106,9 +106,10 @@ This script fulfills these requirements by performing the following functions. T
 
 2. Extract measures on the mean and standard deviation for each measurement.
 
-K. Extracts the measurement columns on the mean and standard deviation for each measurement in the x_axis data set and combines them into one data set.
+    K. Extracts the measurement columns on the mean and standard deviation for each measurement in the x_axis data set and combines them into one data set.
 
 3. Use descriptive activity names for the activities.
+
     O. Replaces activity codes with activity labels.
 
 4. Label the data with descriptive variable names. 
@@ -137,22 +138,17 @@ C. Defines the data set url, download the file and get the date
 
     Result is the zipped data file is in the working directory.
 
-## D. Unzips data file
-##    Result is the creation of the /UCI HAR Dataset directory in the working directory
-##    informational text files in this subdirectory, and training and test files in 
-##    subdirectories below /UCI HAR Dataset.
+D. Unzips data file
 
-## E. Imports the features.txt and activity_labels.txt
-##    Results are two data frames.
-##    The features data frame has 2 variables with 561 rows.
-##    The activity labels data frame has 2 variables with 6 rows.
+    Result is the creation of the /UCI HAR Dataset directory in the working directory informational text files in this subdirectory, and training and test files in subdirectories below /UCI HAR Dataset.
 
-## F. Imports the subject_test.txt and subject_train.txt. Creates super set.
-##    Results are two data frames.
-##    The test data frame has 1 variable with 2947 rows.
-##    The train data frame has 1 variable with 7352 rows.
-##    Result is one super set data frame with test and train records in that order with
-##    1 variable, or column, and 10299 rows.
+E. Imports the features.txt and activity_labels.txt
+
+    Results are two data frames. The features data frame has 2 variables with 561 rows. The activity labels data frame has 2 variables with 6 rows.
+
+F. Imports the subject_test.txt and subject_train.txt. Creates super set.
+
+    Results are two data frames. The test data frame has 1 variable with 2947 rows. The train data frame has 1 variable with 7352 rows. Result is one super set data frame with test and train records in that order with 1 variable, or column, and 10299 rows.
 
 ## G. Imports the x_test.txt and x_train.txt. Creates super set.
 ##    Results are two data frames.
