@@ -154,80 +154,71 @@ G. Imports the x_test.txt and x_train.txt. Creates super set.
 
 	Results are two data frames. The test data frame has 561 variables with 2947 rows. The train data frame has 561 variables with 7352 rows. Result is one super set data frame with test and train records in that order with 561 variables and 10299 rows.
 
-## H. Imports the y_test.txt and y_train.txt
-##    Results are two data frames.
-##    The test data frame has 1 variable with 2947 rows.
-##    The train data frame has 1 variable with 7352 rows.
-##    Result is one super set data frame with test and train records in that order with
-##    1 variable, or column, and 10299 rows.
+H. Imports the y_test.txt and y_train.txt
 
-## I. Creates human-readable feature labels for column names.
+	Results are two data frames. The test data frame has 1 variable with 2947 rows. The train data frame has 1 variable with 7352 rows. Result is one super set data frame with test and train records in that order with 1 variable, or column, and 10299 rows.
 
-##    Copies names into third column of my_features.
-##    Process third column using sub() to replace the characters below with words.
-##    Word definitions obtained from README.txt and features_info.txt files 
-##    and original data developers' description.
-##    Deliberate decision to replace only the first instance of a string to capture f, t.
-##    Focused on variables with mean() or std() in the name.
-##    Replaced special characters dash and parens with underscore.
-##    No explanation of "BodyBody" found in documentation, so that stands on its own.
-##    "Body" and "Gravity" are self-explanatory.
+I. Creates human-readable feature labels for column names.
 
-##    f at beginning of line -> Freq, which stands for Frequency
-##    t at beginning of line -> Time
-##    Acc -> Acceleration
-##    Gyro -> Gyroscope
-##    Mag -> Magnitude
-##    -mean()- -> _mean_
-##    -mean() -> _mean
-##    -std()- -> _std_
-##    -std() -> _std
+	Copies names into third column of my_features. Process third column using sub() to replace the characters below with words. Word definitions obtained from README.txt and features_info.txt files and original data developers' description.
+	
+	I made a deliberate decision to replace only the first instance of a string to capture f, t.
+	* Focused on variables with mean() or std() in the name.
+	* Replaced special characters dash and parens with underscore.
+	* No explanation of "BodyBody" found in documentation, so that stands on its own.
+	* "Body" and "Gravity" are self-explanatory.
+
+	List of changes:
+	
+	* f at beginning of line -> Freq, which stands for Frequency
+	* t at beginning of line -> Time
+	* Acc -> Acceleration
+	* Gyro -> Gyroscope
+	* Mag -> Magnitude
+	* -mean()- -> _mean_
+	* -mean() -> _mean
+	* -std()- -> _std_
+	* -std() -> _std
 
 
-## J. Assigns my_features labels to column names
-##    Result is variable names in the my_x_axis block have the new human readable names.
+J. Assigns my_features labels to column names
+
+	Result is variable names in the my_x_axis block have the new human readable names.
 
 
-## K. Extracts the variable calculations columns for mean() and std()
+K. Extracts the variable calculations columns for mean() and std()
 
-##    To fulfill the project requirement to take the measurements on the 
-##    mean and standard deviation for the measurements, I used variables with 
-##    mean() and std().  MeanFreq() is another type of measurement.
-##    mean() has 33 variables, or columns.
-##    std() has 33  variables, or columns.
-##    Result is a total column extraction of 66 into a new data set.
+	To fulfill the project requirement to take the measurements on the mean and standard deviation for the measurements, I used variables with mean() and std().  MeanFreq() is another type of measurement.
 
-## L. Binds the my_y_axis and my_x_axis2 data sets.
+	* mean() has 33 variables, or columns.
+	* std() has 33  variables, or columns.
 
-##    my_y_axis contains 1 column with activity codes.
-##    my_x_axis2 contains 66 columns of feature variables.
-##    Result is one data frame set with 67 columns and 10299 rows.
-##    First column contains the activity codes.
-##    Remaining columns are feature variables.
+	Result is a total column extraction of 66 into a new data set.
 
-## M. Binds my_subjects as a column to my_big_data sets.
+L. Binds the my_y_axis and my_x_axis2 data sets.
 
-##    Result is one set with 68 columns and 10299 rows
-##    Assigns "SubjectCode" and "ActivityCode" as names to the first two columns.
+	my_y_axis contains 1 column with activity codes.
+	my_x_axis2 contains 66 columns of feature variables.
+	Result is one data frame set with 67 columns and 10299 rows.
+	First column contains the activity codes.
+	Remaining columns are feature variables.
 
-## N. Calculates the mean for each variable
+M. Binds my_subjects as a column to my_big_data sets.
 
-##    Uses melt() to create a manageable data frame with grouping by SubjectCode and 
-##    ActivityCode.
-##    Uses dcast() to apply the mean calculation to each group of data.
-##    Result is my_tidy_data set listing all subject codes, each with an activity code
-##    and a row of mean value calculations for each variable.
+	Result is one set with 68 columns and 10299 rows. Assigns "SubjectCode" and "ActivityCode" as names to the first two columns.
 
-## O. Replaces activity codes with activity labels.
+N. Calculates the mean for each variable
 
-##    Creates a factor list of the activity codes.
-##    Uses level() to replace factor level numbers with associated activity label text.
-##    Orders SubjectCode and ActivityCode columns as columns 1 and 2 in data set.
-##    Removes the old SubjectCode and ActivityCode columns.
-##    Recasts factor column as character column.
-##    Result is one set with 68 columns and 10299 rows.
+	Uses melt() to create a manageable data frame with grouping by SubjectCode and ActivityCode.
+	Uses dcast() to apply the mean calculation to each group of data.
+	Result is my_tidy_data set listing all subject codes, each with an activity code and a row of mean value calculations for each variable.
 
-## P. Writes the tidy data
+O. Replaces activity codes with activity labels.
 
-##    Result is one data file "gcd_tidy_data_set.txt" in the working directory.
+	Creates a factor list of the activity codes. Uses level() to replace factor level numbers with associated activity label text. Orders SubjectCode and ActivityCode columns as columns 1 and 2 in data set. Removes the old SubjectCode and ActivityCode columns. Recasts factor column as character column. 
+	Result is one set with 68 columns and 10299 rows.
+
+P. Writes the tidy data
+
+	Result is one data file "gcd_tidy_data_set.txt" in the working directory.
 
