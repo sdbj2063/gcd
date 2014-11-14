@@ -9,8 +9,8 @@ run_analysis.R Script for Project
 
 November 2014
 
-# Introduction to this README and the R Script:
-# ======================================
+Introduction to this README and the R Script:
+---------------------
 
 This README.md contains information about the script, how to operate it and how it meets
 the project requirements.
@@ -19,8 +19,8 @@ The code book for this project is CodeBook.md.
 The script generates a space delimited text file gcd_tidy_data_set.txt in the user's
 working directory.
 
-# Introduction to Original Data Set:
-# ======================================
+Introduction to Original Data Set:
+---------------------
 
 This script utilizes the code book and data at the following URLs:
 
@@ -29,8 +29,8 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
-# License to Original Data Set:
-# ======================================
+License to Original Data Set:
+---------------------
 Use of this dataset in publications must be acknowledged by referencing the following publication [1]
 
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
@@ -39,8 +39,8 @@ This dataset is distributed AS-IS and no responsibility implied or explicit can 
 
 Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
 
-# Platform Information:
-# ======================================
+Platform Information:
+---------------------
 
 Oringinal script was run on the following system with RStudio.
 
@@ -55,16 +55,16 @@ Oringinal script was run on the following system with RStudio.
 * R packages "utils" v. 3.1.1 and "reshape2" v. 1.4
 
 
-# Summary of Data Used and Script Requirements:
-# ======================================
+Summary of Data Used and Script Requirements:
+---------------------
 The original data unzips into your working directory in /UCI HAR Dataset with /train and /test subdirectories. The data is loaded into a grid, with 561 variables, or columns, plus subject and activity labels completing the columns. The columns of data are common mathematical calculations on the raw data set.
 
 The sources for the rows of calculated data are X_test.txt and X_train.txt. The sources for the row labels indicating to what activity code a row of data corresponds are y_text.txt and y_train.txt. The sources for the row labels indicating to what subject a row of data corresponds are subject_test.txt and subject_train.txt. The source for the text names of the activity codes is activity_labels.txt. The source for the variable, or column, labels is features.txt.
 
 The R script must be installed in the user's working directory. It reads from and saves files to that path. The command to execute the script is "run_analysis()."
 
-# Project Script Requirements:
-# ======================================
+Project Script Requirements:
+---------------------
 
 The project script must perform five basic functions:
 
@@ -120,8 +120,8 @@ This script fulfills these requirements by performing the following functions. T
     P. Writes the tidy data to a text file in the working directory.
    
 
-# Working Code Comments:
-# ======================================
+Working Code Comments:
+---------------------
 
 A. Defines the libraries to use
 
