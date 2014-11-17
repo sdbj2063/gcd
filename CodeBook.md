@@ -224,15 +224,15 @@ The excluded “mean” variables for this Johns Hopkins project are below:
 * fBodyBodyGyroMag-meanFreq()
 * fBodyBodyGyroJerkMag-meanFreq()
 
-Seven angle variables contained "mean." In this context, according to features_info.txt, "angle(): Angle between to(sp) vectors." This is not a baseline calculation but a relationship between two data points, one of which is a mean. As such, this is a secondary calculation and does not meet the Johns Hopkins project criteria. The rejected variables follow:
+Seven angle variables contained "mean." In this context, according to __features_info.txt__, "angle(): Angle between to(sp) vectors." This is not a baseline calculation but a relationship between two data points, one of which is a mean. As such, this is a secondary calculation and does not meet the Johns Hopkins project criteria. The rejected variables follow:
 
-angle(tBodyAccMean,gravity)
-angle(tBodyAccJerkMean),gravityMean
-angle(tBodyGyroMean,gravityMean)
-angle(tBodyGyroJerkMean,gravityMean)
-angle(X,gravityMean)
-angle(Y,gravityMean)
-angle(Z,gravityMean)
+* angle(tBodyAccMean,gravity)
+* angle(tBodyAccJerkMean),gravityMean
+* angle(tBodyGyroMean,gravityMean)
+* angle(tBodyGyroJerkMean,gravityMean)
+* angle(X,gravityMean)
+* angle(Y,gravityMean)
+* angle(Z,gravityMean)
 
 ### 4.	Background on Gyroscopes, Accelerometers and Original Data
 
@@ -262,20 +262,22 @@ I found two common patterns in the system, "-X()-" and "-X()" where X was either
 ### 6.	Variable Key Words and Their Meanings
 
 I contacted the original developers and asked why they used the phrase “BodyBody” in some variable names. I did not receive a reply.
-Key Word Substitute	Meaning	Original Variable Tag
-Time	Time series data.	t
-Freq	Frequency domain signals calculated.	f
-Body	Body motion component from sensor acceleration signal	Body
-BodyBody	Body motion component. The original developers did not provide an explanation for this keyword combination. 	BodyBody
-Acceleration	Linear acceleration.	Acc
-Jerk	Rate of change of acceleration. 	Jerk
-Gyroscope	Angular velocity. 	Gyro
-Gravity	Gravitational motion component from sensor acceleration signal.	Gravity
-Magnitude	How far the quantity differs from zero.	Mag
+
+Key Word Substitute	| Meaning	| Original Variable Tag
+------------------- | --------- | ---------------------
+Time	| Time series data.	| t
+Freq	| Frequency domain signals calculated.	| f
+Body	| Body motion component from sensor acceleration signal	| Body
+BodyBody	| Body motion component. The original developers did not provide an explanation for this keyword combination. 	| BodyBody
+Acceleration	| Linear acceleration.	| Acc
+Jerk	| Rate of change of acceleration. 	| Jerk
+Gyroscope	| Angular velocity. 	| Gyro
+Gravity	| Gravitational motion component from sensor acceleration signal.	| Gravity
+Magnitude	| How far the quantity differs from zero.	| Mag
 
 References 3, 4, 5
 
-7.	List of mean() variables used with explanations
+### 7.	List of mean() variables used with explanations
 
 The following variables contain the mean value of the mean() variables grouped by subject and activity.
 The table below lists the time measurements.
@@ -303,7 +305,8 @@ The following variables are frequency counterpart measurements to the time measu
 * FreqBodyBodyGyroscopeMagnitude_mean
 * FreqBodyBodyGyroscopeJerkMagnitude_mean
 
-8.	List of std() variables used with explanations
+### 8.	List of std() variables used with explanations
+
 The following variables contain the mean value of the standard deviation--std()--variables grouped by subject and activity.
 
 The table below lists the time measurements.
@@ -323,6 +326,7 @@ TimeBodyGyroscopeMagnitude_std	| Magnitude of its measurement
 TimeBodyGyroscopeJerkMagnitude_std	| Magnitude of its measurement
 
 The following variables are frequency counterpart measurements to the time measurements above. The original development team obtained the frequency domain signals by applying Fast Fourier Transform (FFT) to variables.
+
 * FreqBodyAcceleration_std_X, _Y, _Z
 * FreqBodyAccelerationJerk_std_X, _Y, _Z
 * FreqBodyGyroscope_std_X, _Y, _Z
