@@ -368,12 +368,14 @@ When the script executed on the above system configuration, downloading the file
 
 For the script to run properly, save it to your working directory. After sourcing the script from the command line prompt, type the function name at the command prompt to execute the script:
 
-> source(“run_analysis.R”)
-> run_analysis()
+<kbd> >source(“run_analysis.R”)</kbd>
+
+<kbd> >run_analysis()</kbd>
 
 ### 3.	Messages Typed to the Screen
 
 When the script executes, the R system generates three messages to the screen automatically.
+<code>
 
 trying URL 'http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones'
 Content type 'text/html; charset=UTF-8' length 200 bytes
@@ -388,32 +390,34 @@ downloaded 59.7 Mb
 Warning message:
 In download.file(myurlbook, "human-activity-recognition-using-smartphones.html") :
   downloaded length 9017 != reported length 200
+</code>
   
 None of these messages has any impact on the script’s execution.
 
 ### 4.	Downloading and Extracting Files
  
 The script does not check for pre-existing directory paths or files. Before rerunning the script, the best course of action is to first archive or delete the generated tidy data set, the original set of HTML and Zip files and any associated subdirectories and files.
+
 The script downloads the two files mentioned in Section V.1, “Original Data Sources: URLs,” to the working directory. It creates a directory path and extracts the text files to that path.
 
 ### 5.	Transformation of Data
 
 Once the script extracts the data from the zip file, the program imports the necessary data files. Please see Section V.6, “Original Data Sources: Data Files Used with Definitions.” Then the script completes the following transformations:
 
-1)	Merges the "subject" data sets, first "test" then "train."
-2)	Merges the "X" data sets, first "test" then "train."
-3)	Merges the "Y" data sets, first "test" then "train."
-4)	Creates human readable variables names.
-5)	Applies new column names to the big data set.
-6)	Extracts the variable columns concerning mean() and std().
-7)	Merges the "Y" super set with the "X" super set.
-8)	Merges the "subject" super set with the "X-Y" super set.
-9)	Melts the data into a manageable data frame grouped by subject and activity.
-10)	Calculates the mean for every variable grouped by subject and activity.
-11)	Replaces activity codes with activity labels.
-11)	Exports the tidy data set to text file gcd_tidy_data_set.txt.
+1.  Merges the "subject" data sets, first "test" then "train."
+2.  Merges the "X" data sets, first "test" then "train."
+3.  Merges the "Y" data sets, first "test" then "train."
+4.  Creates human readable variables names.
+5.  Applies new column names to the big data set.
+6.  Extracts the variable columns concerning mean() and std().
+7.  Merges the "Y" super set with the "X" super set.
+8.  Merges the "subject" super set with the "X-Y" super set.
+9.  Melts the data into a manageable data frame grouped by subject and activity.
+10.  Calculates the mean for every variable grouped by subject and activity.
+11.  Replaces activity codes with activity labels.
+12.  Exports the tidy data set to text file __gcd_tidy_data_set.txt__.
 
-README.md contains a detailed description of the script processing steps and results.
+__README.md__ contains a detailed description of the script processing steps and results.
 
 ### 6.	Tidy Data Set Results
 
@@ -422,7 +426,9 @@ The script creates a space-delimited file gcd_tidy_data_set.txt in the working d
 A correct file contains the following rows of data:
 
 •	181x rows, with the first containing the variable, or column, names;
+
 A correct file contains the following columns, left to right, of data:
+
 •	1x column for subject ids ("SubjectCode") containing an integer 1-30 representing the unique of id of the subject;
 •	1x column for activity names ("ActivityCode") containing a character string with the name of the activity;
 •	33x columns for variables representing the mean--mean()--of measurements; and
