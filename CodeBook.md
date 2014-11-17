@@ -160,6 +160,7 @@ Activity codes in the "X" data sets match one of the six character label names c
 The fully expanded zip file also provides raw data files in subdirectories:
 
   __/UCI HAR Dataset/test/InertialSignals__
+  
   __/UCI HAR Dataset/train/InertialSignals__
     
 They are not necessary for the purpose of this Johns Hopkins project.
@@ -168,6 +169,167 @@ They are not necessary for the purpose of this Johns Hopkins project.
 
 The original source data knits together in a Lego block pattern, with rectangles of different sizes forming to create one large rectangle. The diagram in “Appendix C” illustrates how the various data files knit together to form a cohesive data set. It also shows the primary phases in processing the data to reach the tidy data set.
 
+
+### 6.	Data Files Used with Definitions
+
+The project requires the following data files included in the zipped file downloaded during the script's running process:
+
+Filename	| Description
+--------  | ------------
+__features.txt__	| CSV file listing all 561 variable names to be used for column names.
+activity_labels.txt	| CSV file listing the six activity codes with their activity names.
+train/X_train.txt	| CSV file with 561 variables of data for the training subjects.
+train/y_train.txt	| CSV file with the activity codes for the X_train.txt data.
+train/subject_train.txt	| CSV file with the subject ids for the training subjects.
+test/X_test.txt	| CSV file with 561 variables of data for the test subjects.
+test/y_test.txt	| CSV file with the activity codes for the X_test.txt data.
+test/subject_test.txt	| CSV file with the subject ids for the test subjects.
+
+
+## VI.	Processing Decisions
+
+Completing the project data transformations required making several key decisions, including what commands to use, which variables to select, how to name the variables and researching the background of gyroscopes and accelerometers within the context of mobile phones.
+
+### 1.	R Language Libraries
+
+I used two libraries, "utils" and "reshape2," the latter of which the lesson videos covered. To address the mean calculations I used "melt" and "dcast" from the "reshape2" library.
+
+I removed variables as they became obsolete, which improved performance.
+
+### 2.	Choosing Variables for Mean and Standard Deviation Calculations
+The Johns Hopkins project required students to calculate the mean() for variables pertaining to the baseline calculations for mean and standard deviation on the raw data sets.
+
+The original data sets had 561 variables with X, Y, and Z measurements for location in space. To meet the project requirements for mean and standard deviation, I selected 33 variables with "mean()" and 33 variables with "std()" in the names.
+
+### 3.	Excluded Variables with “mean” in the Name
+
+A key assumption I made in choosing what variables to use is that the Johns Hopkins professor would want symmetrical results for students to review one another. In other words, it made sense that when reviewing variable names, I identified an equal number of variables with “std()” and “mean().”
+
+One noticeable aspect of the list of 561 variables is that the original researchers made many baseline calculations on the raw data. In addition to mean and standard deviation, they calculated the median absolute deviation (mad()), the largest and smallest values in the array (max() and min()), the signal magnitude area (sma()), and interquartile range (iqr()), among others, for the major variable groups. 
+
+Then they calculated the meanFreq().  According to the original data project file features_info.txt, "meanFreq(): Weighted average of the frequency components to obtain a mean frequency."  The researchers did not explain why they calculated the mean on frequency but not complete the other baseline calculations on frequency, such as standard deviation. This lead me to believe that the meanFreq() calculations were secondary calculations. Furthermore, including these would unbalance the tidy data set as a whole. 
+
+The excluded “mean” variables for this Johns Hopkins project are below:
+
+fBodyAcc-meanFreq()-X
+fBodyAcc-meanFreq()-Y
+fBodyAcc-meanFreq()-Z
+fBodyAccJerk-meanFreq()-X
+fBodyAccJerk-meanFreq()-Y
+fBodyAccJerk-meanFreq()-Z
+fBodyGyro-meanFreq()-X
+fBodyGyro-meanFreq()-Y
+fBodyGyro-meanFreq()-Z
+FbodyBodyAccJerkMag-meanFreq()
+fBodyBodyGyroMag-meanFreq()
+fBodyBodyGyroJerkMag-meanFreq()
+
+Seven angle variables contained "mean." In this context, according to features_info.txt, "angle(): Angle between to(sp) vectors." This is not a baseline calculation but a relationship between two data points, one of which is a mean. As such, this is a secondary calculation and does not meet the Johns Hopkins project criteria. The rejected variables follow:
+
+angle(tBodyAccMean,gravity)
+angle(tBodyAccJerkMean),gravityMean
+angle(tBodyGyroMean,gravityMean)
+angle(tBodyGyroJerkMean,gravityMean)
+angle(X,gravityMean)
+angle(Y,gravityMean)
+angle(Z,gravityMean)
+
+### 4.	Background on Gyroscopes, Accelerometers and Original Data
+
+The gyroscope determines orientation in 3D space, while the accelerometer measures non-gravitational acceleration. The gyroscope maintains a position on a 3-axial plane, using gravity to determine which way is down. The accelerometer captures vibrations and generates current signals when the device moves; based upon those signals it calculates acceleration.  Ref 1, 2
+
+The original researchers used "low pass Butterworth filter with a corner frequency of 0.3 Hz" to separate the acceleration signal into body and gravity figures.  The original development team obtained the frequency domain signals by applying Fast Fourier Transform (FFT) to variables.  Ref 3
+
+Using time and the “body linear acceleration and angular velocity,” researchers calculated Jerk signals. Finally, using the Euclidean norm, researchers calculated the magnitude of the XYZ values. Ref 3
+
+The _X, _Y and _Z values in the data indicate the axial measurements. Ref 3. X and Y are planar coordinates, and Z is the altitude, or depth.
+
+### 5.	Human-readable Variable Names
+
+What constitutes a human-readable descriptive name is a question of personal experience. In database development, administrators often use standard abbreviations to represent key database concepts, such as “tbl” for table or “qry” for query. They also use underscores to separate words that are parts of names to make them more readable.
+In the R language development environment, most commands or functions have multiple words to make up one function name. Each word begins with a capital letter to ease readability.
+
+I chose to expand key abbreviations to a complete word, capitalize the first letter of each word and substitute underscore for special characters. Some of the variable names are long, but they are more understandable. Word substitutions included the following:
+
+•	"t" at the beginning of the variable name became "Time."
+•	"f" at the beginning of the variable name became "Freq" for frequency.
+•	"Acc" became "Acceleration."
+•	"Gyro" became "Gyroscope."
+•	"Mag" became "Magnitude."
+
+I found two common patterns in the system, "-X()-" and "-X()" where X was either "mean" or "std." Substituting "_" for the punctuation in those four parameters became the final step in the conversion process. 
+
+### 6.	Variable Key Words and Their Meanings
+
+I contacted the original developers and asked why they used the phrase “BodyBody” in some variable names. I did not receive a reply.
+Key Word Substitute	Meaning	Original Variable Tag
+Time	Time series data.	t
+Freq	Frequency domain signals calculated.	f
+Body	Body motion component from sensor acceleration signal	Body
+BodyBody	Body motion component. The original developers did not provide an explanation for this keyword combination. 	BodyBody
+Acceleration	Linear acceleration.	Acc
+Jerk	Rate of change of acceleration. 	Jerk
+Gyroscope	Angular velocity. 	Gyro
+Gravity	Gravitational motion component from sensor acceleration signal.	Gravity
+Magnitude	How far the quantity differs from zero.	Mag
+
+References 3, 4, 5
+
+7.	List of mean() variables used with explanations
+
+The following variables contain the mean value of the mean() variables grouped by subject and activity.
+The table below lists the time measurements.
+
+Variable Name | Explanation
+------------- | ------------
+TimeBodyAcceleration_mean_X, _Y, _Z	| Body acceleration signal.
+TimeGravityAcceleration_mean_X, _Y, _Z	  | Gravity acceleration signal
+TimeBodyAccelerationJerk_mean_X, _Y, _Z	| Body acceleration jerk measurement
+TimeBodyGyroscope_mean_X, _Y, _Z	| Body gyroscope baseline measurement
+TimeBodyGyroscopeJerk_mean_X, _Y, _Z	| Body angular jerk velocity
+TimeBodyAccelerationMagnitude_mean	| Magnitude of its measurement
+TimeGravityAccelerationMagnitude_mean	| Magnitude of its measurement
+TimeBodyAccelerationJerkMagnitude_mean	| Magnitude of its measurement
+TimeBodyGyroscopeMagnitude_mean	| Magnitude of its measurement
+TimeBodyGyroscopeJerkMagnitude_mean	| Magnitude of its measurement
+
+The following variables are frequency counterpart measurements to the time measurements above. The original development team obtained the frequency domain signals by applying Fast Fourier Transform (FFT) to variables.
+
+* FreqBodyAcceleration_mean_X, _Y, _Z
+* FreqBodyAccelerationJerk_mean_X, _Y, _Z
+* FreqBodyGyroscope_mean_X, _Y, _Z
+* FreqBodyAccelerationMagnitude_mean
+* FreqBodyBodyAccelerationJerkMagnitude_mean
+* FreqBodyBodyGyroscopeMagnitude_mean
+* FreqBodyBodyGyroscopeJerkMagnitude_mean
+
+8.	List of std() variables used with explanations
+The following variables contain the mean value of the standard deviation--std()--variables grouped by subject and activity.
+
+The table below lists the time measurements.
+
+
+Variable Name | Explanation
+------------- | ------------
+TimeBodyAcceleration_std_X, _Y, _Z | Body acceleration signal.
+TimeGravityAcceleration_std_X, _Y, _Z |	Gravity acceleration signal
+TimeBodyAccelerationJerk_std_X, _Y, _Z	| Body acceleration jerk measurement
+TimeBodyGyroscope_std_X, _Y, _Z	| Body gyroscope baseline measurement
+TimeBodyGyroscopeJerk_std_X, _Y, _Z	| Body angular jerk velocity
+TimeBodyAccelerationMagnitude_std	| Magnitude of its measurement
+TimeGravityAccelerationMagnitude_std	| Magnitude of its measurement
+TimeBodyAccelerationJerkMagnitude_std	| Magnitude of its measurement
+TimeBodyGyroscopeMagnitude_std	| Magnitude of its measurement
+TimeBodyGyroscopeJerkMagnitude_std	| Magnitude of its measurement
+
+The following variables are frequency counterpart measurements to the time measurements above. The original development team obtained the frequency domain signals by applying Fast Fourier Transform (FFT) to variables.
+* FreqBodyAcceleration_std_X, _Y, _Z
+* FreqBodyAccelerationJerk_std_X, _Y, _Z
+* FreqBodyGyroscope_std_X, _Y, _Z
+* FreqBodyAccelerationMagnitude_std
+* FreqBodyBodyAccelerationJerkMagnitude_std
+* FreqBodyBodyGyroscopeMagnitude_std
+* FreqBodyBodyGyroscopeJerkMagnitude_std
 
 
 
