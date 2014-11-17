@@ -102,7 +102,8 @@ This script fulfills these requirements by performing the following functions. T
 
 #### 2. Extract measures on the mean and standard deviation for each measurement.
 
-    K. Extracts the measurement columns on the mean and standard deviation for each measurement in the x_axis data set and combines them into one data set.
+    K. Extracts the measurement columns on the mean and standard deviation for each measurement 
+    in the x_axis data set and combines them into one data set.
 
 #### 3. Use descriptive activity names for the activities.
 
@@ -114,9 +115,11 @@ This script fulfills these requirements by performing the following functions. T
     
     J. Assigns my_features labels to column names.
 
-#### 5. Create a second independent tidy data set with the average of each variable for each activity and each subject.
+#### 5. Create a second independent tidy data set with the average of each variable 
+for each activity and each subject.
 
-    N. For the second data set, the tidy data set, calculates the mean for each variable (column of data) for each activity and each subject.
+    N. For the second data set, the tidy data set, calculates the mean for each variable 
+    (column of data) for each activity and each subject.
     
     P. Writes the tidy data to a text file in the working directory.
    
