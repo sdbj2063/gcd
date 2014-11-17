@@ -147,7 +147,7 @@ The zipped file includes several data sets that the system extracts into subdire
 
   __/UCI HAR Dataset__
 
- __/UCI HAR Dataset/test__
+  __/UCI HAR Dataset/test__
 
   __/UCI HAR Dataset/train__
 
@@ -177,13 +177,13 @@ The project requires the following data files included in the zipped file downlo
 Filename	| Description
 --------  | ------------
 __features.txt__	| CSV file listing all 561 variable names to be used for column names.
-activity_labels.txt	| CSV file listing the six activity codes with their activity names.
-train/X_train.txt	| CSV file with 561 variables of data for the training subjects.
-train/y_train.txt	| CSV file with the activity codes for the X_train.txt data.
-train/subject_train.txt	| CSV file with the subject ids for the training subjects.
-test/X_test.txt	| CSV file with 561 variables of data for the test subjects.
-test/y_test.txt	| CSV file with the activity codes for the X_test.txt data.
-test/subject_test.txt	| CSV file with the subject ids for the test subjects.
+__activity_labels.txt__	| CSV file listing the six activity codes with their activity names.
+__train/X_train.txt__	| CSV file with 561 variables of data for the training subjects.
+__train/y_train.txt__	| CSV file with the activity codes for the X_train.txt data.
+__train/subject_train.txt__	| CSV file with the subject ids for the training subjects.
+__test/X_test.txt__	| CSV file with 561 variables of data for the test subjects.
+__test/y_test.txt__	| CSV file with the activity codes for the X_test.txt data.
+__test/subject_test.txt__	| CSV file with the subject ids for the test subjects.
 
 
 ## VI.	Processing Decisions
@@ -211,18 +211,18 @@ Then they calculated the meanFreq().  According to the original data project fil
 
 The excluded “mean” variables for this Johns Hopkins project are below:
 
-fBodyAcc-meanFreq()-X
-fBodyAcc-meanFreq()-Y
-fBodyAcc-meanFreq()-Z
-fBodyAccJerk-meanFreq()-X
-fBodyAccJerk-meanFreq()-Y
-fBodyAccJerk-meanFreq()-Z
-fBodyGyro-meanFreq()-X
-fBodyGyro-meanFreq()-Y
-fBodyGyro-meanFreq()-Z
-FbodyBodyAccJerkMag-meanFreq()
-fBodyBodyGyroMag-meanFreq()
-fBodyBodyGyroJerkMag-meanFreq()
+* fBodyAcc-meanFreq()-X
+* fBodyAcc-meanFreq()-Y
+* fBodyAcc-meanFreq()-Z
+* fBodyAccJerk-meanFreq()-X
+* fBodyAccJerk-meanFreq()-Y
+* fBodyAccJerk-meanFreq()-Z
+* fBodyGyro-meanFreq()-X
+* fBodyGyro-meanFreq()-Y
+* fBodyGyro-meanFreq()-Z
+* FbodyBodyAccJerkMag-meanFreq()
+* fBodyBodyGyroMag-meanFreq()
+* fBodyBodyGyroJerkMag-meanFreq()
 
 Seven angle variables contained "mean." In this context, according to features_info.txt, "angle(): Angle between to(sp) vectors." This is not a baseline calculation but a relationship between two data points, one of which is a mean. As such, this is a secondary calculation and does not meet the Johns Hopkins project criteria. The rejected variables follow:
 
