@@ -1,14 +1,14 @@
-Getting and Cleaning Data Course
+# Getting and Cleaning Data Course
 -------------------------------------
 
-Presented by Johns Hopkins University through Coursera
+### Presented by Johns Hopkins University through Coursera
 November 2014
 
-Code Book for Course Project
+# Code Book for Course Project
 ----------------------------
 Written by GitHub user sdbj2063. Copyright © 2014 sdbj2063. All Rights Reserved.
 
-Table of Contents
+### Table of Contents
 -------------------
 
 I.	Introduction	3
