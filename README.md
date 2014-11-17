@@ -1,4 +1,4 @@
-README.md
+#### README.md
 
 # Project Information:
 ---------------------
@@ -77,7 +77,7 @@ The project script must perform five basic functions:
  
 This script fulfills these requirements by performing the following functions. The individual functions occur in alphabetical order in the script.
 
-1. Merge training and test sets into one data set.
+#### 1. Merge training and test sets into one data set.
 
     A. Sets libraries for R to utilize.
 
@@ -100,21 +100,21 @@ This script fulfills these requirements by performing the following functions. T
     M. Binds train and test subject ids to the big_data data set.
     
 
-2. Extract measures on the mean and standard deviation for each measurement.
+#### 2. Extract measures on the mean and standard deviation for each measurement.
 
     K. Extracts the measurement columns on the mean and standard deviation for each measurement in the x_axis data set and combines them into one data set.
 
-3. Use descriptive activity names for the activities.
+#### 3. Use descriptive activity names for the activities.
 
     O. Replaces activity codes with activity labels.
 
-4. Label the data with descriptive variable names. 
+#### 4. Label the data with descriptive variable names. 
 
     I. Creates human-readable feature labels for column names.
     
     J. Assigns my_features labels to column names.
 
-5. Create a second independent tidy data set with the average of each variable for each activity and each subject.
+#### 5. Create a second independent tidy data set with the average of each variable for each activity and each subject.
 
     N. For the second data set, the tidy data set, calculates the mean for each variable (column of data) for each activity and each subject.
     
@@ -124,9 +124,9 @@ This script fulfills these requirements by performing the following functions. T
 ## Working Code Comments:
 ---------------------
 
-### A. Defines the libraries to use
+#### A. Defines the libraries to use
 
-### B. Defines the data set code book url, download the file and get the date
+#### B. Defines the data set code book url, download the file and get the date
 
     Result is the HTML code book is in the working directory.
 
