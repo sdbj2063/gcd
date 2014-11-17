@@ -1,15 +1,16 @@
 README.md
 
-Project Information:
+# Project Information:
 ---------------------
 
-Getting and Cleaning Data Class offered by Johns Hopkins University through Coursera
+## Getting and Cleaning Data Class 
+### offered by Johns Hopkins University through Coursera
 
-run_analysis.R Script for Project
+Regarding run_analysis.R Script for Project
 
 November 2014
 
-Introduction to this README and the R Script:
+## Introduction to this README and the R Script:
 ---------------------
 
 This README.md contains information about the script, how to operate it and how it meets
@@ -19,7 +20,7 @@ The code book for this project is CodeBook.md.
 The script generates a space delimited text file gcd_tidy_data_set.txt in the user's
 working directory.
 
-Introduction to Original Data Set:
+## Introduction to Original Data Set:
 ---------------------
 
 This script utilizes the code book and data at the following URLs:
@@ -29,7 +30,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
-License to Original Data Set:
+## License to Original Data Set:
 ---------------------
 Use of this dataset in publications must be acknowledged by referencing the following publication [1]
 
@@ -39,7 +40,7 @@ This dataset is distributed AS-IS and no responsibility implied or explicit can 
 
 Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
 
-Platform Information:
+## Platform Information:
 ---------------------
 
 Oringinal script was run on the following system with RStudio.
@@ -55,7 +56,7 @@ Oringinal script was run on the following system with RStudio.
 * R packages "utils" v. 3.1.1 and "reshape2" v. 1.4
 
 
-Summary of Data Used and Script Requirements:
+## Summary of Data Used and Script Requirements:
 ---------------------
 The original data unzips into your working directory in /UCI HAR Dataset with /train and /test subdirectories. The data is loaded into a grid, with 561 variables, or columns, plus subject and activity labels completing the columns. The columns of data are common mathematical calculations on the raw data set.
 
@@ -63,7 +64,7 @@ The sources for the rows of calculated data are X_test.txt and X_train.txt. The 
 
 The R script must be installed in the user's working directory. It reads from and saves files to that path. The command to execute the script is "run_analysis()."
 
-Project Script Requirements:
+## Project Script Requirements:
 ---------------------
 
 The project script must perform five basic functions:
@@ -120,62 +121,63 @@ This script fulfills these requirements by performing the following functions. T
     P. Writes the tidy data to a text file in the working directory.
    
 
-Working Code Comments:
+## Working Code Comments:
 ---------------------
 
-A. Defines the libraries to use
+### A. Defines the libraries to use
 
-B. Defines the data set code book url, download the file and get the date
+### B. Defines the data set code book url, download the file and get the date
 
     Result is the HTML code book is in the working directory.
 
-C. Defines the data set url, download the file and get the date
+#### C. Defines the data set url, download the file and get the date
 
     Result is the zipped data file is in the working directory.
 
-D. Unzips data file
+#### D. Unzips data file
 
     Result is the creation of the /UCI HAR Dataset directory in the working directory
     informational text files in this subdirectory, and training and test files in 
     subdirectories below /UCI HAR Dataset.
 
-E. Imports the features.txt and activity_labels.txt
+#### E. Imports the features.txt and activity_labels.txt
 
     Results are two data frames. The features data frame has 2 variables with 561 rows. 
     The activity labels data frame has 2 variables with 6 rows.
 
-F. Imports the subject_test.txt and subject_train.txt. Creates super set.
+#### F. Imports the subject_test.txt and subject_train.txt. Creates super set.
 
     Results are two data frames. The test data frame has 1 variable with 2947 rows. 
     The train data frame has 1 variable with 7352 rows. 
     Result is one super set data frame with test and train records in that order 
     with 1 variable, or column, and 10299 rows.
 
-G. Imports the x_test.txt and x_train.txt. Creates super set.
+#### G. Imports the x_test.txt and x_train.txt. Creates super set.
 
 	Results are two data frames. The test data frame has 561 variables with 2947 rows. 
 	The train data frame has 561 variables with 7352 rows. 
 	Result is one super set data frame with test and train records in that order 
 	with 561 variables and 10299 rows.
 
-H. Imports the y_test.txt and y_train.txt
+#### H. Imports the y_test.txt and y_train.txt
 
 	Results are two data frames. The test data frame has 1 variable with 2947 rows. 
 	The train data frame has 1 variable with 7352 rows. 
 	Result is one super set data frame with test and train records in that order 
 	with 1 variable, or column, and 10299 rows.
 
-I. Creates human-readable feature labels for column names.
+#### I. Creates human-readable feature labels for column names.
 
 	Copies names into third column of my_features. Process third column 
 	using sub() to replace the characters below with words. Word definitions obtained 
 	from README.txt and features_info.txt files and original data developers' description.
 	
-	I made a deliberate decision to replace only the first instance of a string to capture f, t.
+	I made several decisions:
+	* Replaced only the first instance of a string to capture f, t.
 	* Focused on variables with mean() or std() in the name.
 	* Replaced special characters dash and parens with underscore.
 	* No explanation of "BodyBody" found in documentation, so that stands on its own.
-	* "Body" and "Gravity" are self-explanatory.
+	* "Body" and "Gravity" are self-explanatory, so they stand on their own.
 
 	List of changes:
 	
@@ -190,12 +192,12 @@ I. Creates human-readable feature labels for column names.
 	* -std() -> _std
 
 
-J. Assigns my_features labels to column names
+#### J. Assigns my_features labels to column names
 
 	Result is variable names in the my_x_axis block have the new human readable names.
 
 
-K. Extracts the variable calculations columns for mean() and std()
+#### K. Extracts the variable calculations columns for mean() and std()
 
 	To fulfill the project requirement to take the measurements on the mean and 
 	standard deviation for the measurements, I used variables with mean() and std().  
@@ -206,7 +208,7 @@ K. Extracts the variable calculations columns for mean() and std()
 
 	Result is a total column extraction of 66 into a new data set.
 
-L. Binds the my_y_axis and my_x_axis2 data sets.
+#### L. Binds the my_y_axis and my_x_axis2 data sets.
 
 	my_y_axis contains 1 column with activity codes.
 	my_x_axis2 contains 66 columns of feature variables.
@@ -214,12 +216,12 @@ L. Binds the my_y_axis and my_x_axis2 data sets.
 	First column contains the activity codes.
 	Remaining columns are feature variables.
 
-M. Binds my_subjects as a column to my_big_data sets.
+#### M. Binds my_subjects as a column to my_big_data sets.
 
 	Result is one set with 68 columns and 10299 rows. Assigns "SubjectCode" 
 	and "ActivityCode" as names to the first two columns.
 
-N. Calculates the mean for each variable
+#### N. Calculates the mean for each variable
 
 	Uses melt() to create a manageable data frame with grouping by SubjectCode 
 	and ActivityCode.
@@ -227,7 +229,7 @@ N. Calculates the mean for each variable
 	Result is my_tidy_data set listing all subject codes, each with an activity code 
 	and a row of mean value calculations for each variable.
 
-O. Replaces activity codes with activity labels.
+#### O. Replaces activity codes with activity labels.
 
 	Creates a factor list of the activity codes. Uses level() to replace factor 
 	level numbers with associated activity label text. Orders SubjectCode and 
@@ -235,7 +237,7 @@ O. Replaces activity codes with activity labels.
 	and ActivityCode columns. Recasts factor column as character column. 
 	Result is one set with 68 columns and 10299 rows.
 
-P. Writes the tidy data
+#### P. Writes the tidy data
 
 	Result is one data file "gcd_tidy_data_set.txt" in the working directory.
 
