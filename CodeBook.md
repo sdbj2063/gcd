@@ -339,6 +339,123 @@ The following variables are frequency counterpart measurements to the time measu
 * FreqBodyBodyGyroscopeMagnitude_std
 * FreqBodyBodyGyroscopeJerkMagnitude_std
 
+## VII.	Running the Script and Key Decision Points
+
+The following subsections describe the script development environment and provide directions about using the script and key components of the script’s processing. README.md, included as part of this Johns Hopkins project, contains a step-by-step description of the script's processing.
+
+### 1.	System Configuration
+
+The script and results were compiled and run on the following system using RStudio.
+
+•	Windows 7 home Premium, Service Pack 1
+
+•	64-bit OS
+
+•	1.6 GHz processor
+
+•	4.00 GB RAM
+
+•	R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+•	Copyright (C) 2014 The R Foundation for Statistical Computing
+•	Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+•	R package "utils" 3.1.1
+•	R package "reshape2" 1.4
+
+### 2.	Executing the Script
+
+When the script executed on the above system configuration, downloading the files took about 2 1/2 minutes depending upon the connection speed. Total run time for the script was less than five minutes.
+
+For the script to run properly, save it to your working directory. After sourcing the script from the command line prompt, type the function name at the command prompt to execute the script:
+
+> source(“run_analysis.R”)
+> run_analysis()
+
+### 3.	Messages Typed to the Screen
+
+When the script executes, the R system generates three messages to the screen automatically.
+
+trying URL 'http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones'
+Content type 'text/html; charset=UTF-8' length 200 bytes
+opened URL
+downloaded 9017 bytes
+
+trying URL 'http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
+Content type 'application/zip' length 62556944 bytes (59.7 Mb)
+opened URL
+downloaded 59.7 Mb
+
+Warning message:
+In download.file(myurlbook, "human-activity-recognition-using-smartphones.html") :
+  downloaded length 9017 != reported length 200
+  
+None of these messages has any impact on the script’s execution.
+
+### 4.	Downloading and Extracting Files
+ 
+The script does not check for pre-existing directory paths or files. Before rerunning the script, the best course of action is to first archive or delete the generated tidy data set, the original set of HTML and Zip files and any associated subdirectories and files.
+The script downloads the two files mentioned in Section V.1, “Original Data Sources: URLs,” to the working directory. It creates a directory path and extracts the text files to that path.
+
+### 5.	Transformation of Data
+
+Once the script extracts the data from the zip file, the program imports the necessary data files. Please see Section V.6, “Original Data Sources: Data Files Used with Definitions.” Then the script completes the following transformations:
+
+1)	Merges the "subject" data sets, first "test" then "train."
+2)	Merges the "X" data sets, first "test" then "train."
+3)	Merges the "Y" data sets, first "test" then "train."
+4)	Creates human readable variables names.
+5)	Applies new column names to the big data set.
+6)	Extracts the variable columns concerning mean() and std().
+7)	Merges the "Y" super set with the "X" super set.
+8)	Merges the "subject" super set with the "X-Y" super set.
+9)	Melts the data into a manageable data frame grouped by subject and activity.
+10)	Calculates the mean for every variable grouped by subject and activity.
+11)	Replaces activity codes with activity labels.
+11)	Exports the tidy data set to text file gcd_tidy_data_set.txt.
+
+README.md contains a detailed description of the script processing steps and results.
+
+### 6.	Tidy Data Set Results
+
+The script creates a space-delimited file gcd_tidy_data_set.txt in the working directory. 
+
+A correct file contains the following rows of data:
+
+•	181x rows, with the first containing the variable, or column, names;
+A correct file contains the following columns, left to right, of data:
+•	1x column for subject ids ("SubjectCode") containing an integer 1-30 representing the unique of id of the subject;
+•	1x column for activity names ("ActivityCode") containing a character string with the name of the activity;
+•	33x columns for variables representing the mean--mean()--of measurements; and
+•	33x columns for variables representing the standard deviation--std()--of measurements.
+
+For each combination of subject and activity, the tidy data set contains one row of data with the mean of the data points for that subject/activity combination. Thus, each subject has six rows of data, one for each activity.
+
+### 7.	The Tidiness of the Data Set
+
+The swirl() exercise for "Getting and Cleaning Data" on tidy data using tidyr() identified three characteristics of tidy data.
+
+1. Each variable is in a column. This data set meets that requirement by listing each variable in its own column.
+2. Each observation is in a row. This data set meets that requirement by listing the mean calculations for each mean() and std() observed data point for each subject/activity combination.
+3. Each type of observational unit forms a table. This data set meets that requirement by listing all the means calculated.
+
+The horizontal layout of this report provided a manageable means of visually inspecting the data.
+
+To take this process one step further, I could have created a four-column table with subject, activity, variable name and value. Instead of the numerical variables each forming their own column, each variable name would be a value in the variable column and its subject/activity/variable combination would have one value. In effect, the data would be a three-way intersection (many-to-many) table in a relational diagram.
+
+However, I saw no practical reason for creating one really long, really skinny data set that a user would then have to recombine in order to make sense of the data. For the purposes of enabling student peer evaluators to quickly review the data, the current layout seemed the best approach and closely resembled the original data.
+
+## VIII.	References
+
+1	Ryan Goodrich, "Accelerometer vs. Gyroscope: What's the Difference?" Purch, http://www.livescience.com/40103-accelerometer-vs-gyroscope.html (accessed November 07, 2014).
+
+2	Manisha Kumar, "Difference Between Gyroscope and Accelerometer," Differences Between, http://www.differencebetween.net/technology/difference-between-gyroscope-and-accelerometer/ (accessed November 07, 2014).
+
+3	Davide Anguita et al, __features_info.txt__ in original project documentation.
+
+4	Richard G. Lyons, "Understanding Digital Signal Processing: Discrete Sequences and Systems," Informit, http://www.informit.com/articles/article.aspx?p=1650107&seqNum=2 (accessed November 07, 2014).
+
+5	Vincent T. van Hees et al, "Separating Movement and Gravity Components in an Acceleration Signal and Implications for the Assessment of Human Daily Physical Activity," PLos One, National Institutes of Health, http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3634007/ (accessed November 07, 2014).
+
 
 
 
