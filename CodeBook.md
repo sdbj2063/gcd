@@ -575,7 +575,7 @@ These signals were used to estimate variables of the feature vector for each pat
 
 The following diagram illustrates the original data and how it connects to each other plus the transformation process it undergoes through the R script. 
 
-<img src="https://github.com/sdbj2063/gcd/edit/master/CodeBook-Appendix-C.png" />
+<img src="https://github.com/sdbj2063/gcd/blob/master/CodeBook-Appendix-C.png" />
 
 
 
