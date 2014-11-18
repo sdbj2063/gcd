@@ -145,12 +145,13 @@ The data pertaining to this Johns Hopkins project is a collection of 561 attribu
 
 The zipped file includes several data sets that the system extracts into subdirectories in the working directory:
 
-  __/UCI HAR Dataset__
+'''
+    __/UCI HAR Dataset__
 
-  __/UCI HAR Dataset/test__
+    __/UCI HAR Dataset/test__
 
-  __/UCI HAR Dataset/train__
-
+    __/UCI HAR Dataset/train__
+'''
 The data files used for this project consist of nine test subjects, __X_test.txt__ and __y_test.txt__, and 21 evaluated subjects, __X_train.txt__ and __y_train.txt__. The "X" data files contain the calculated data for the variables collected. The "y" data files contain a column with an activity code for each row of data in the corresponding "X" data file. The __subject_test.txt__ and __subject_train.txt__ data files contain a column with the subject id for each row of data in the corresponding "X" data files.
 
 The "X" data sets have separate column names contained in features.txt.
@@ -197,6 +198,7 @@ I used two libraries, "utils" and "reshape2," the latter of which the lesson vid
 I removed variables as they became obsolete, which improved performance.
 
 ### 2.	Choosing Variables for Mean and Standard Deviation Calculations
+
 The Johns Hopkins project required students to calculate the mean() for variables pertaining to the baseline calculations for mean and standard deviation on the raw data sets.
 
 The original data sets had 561 variables with X, Y, and Z measurements for location in space. To meet the project requirements for mean and standard deviation, I selected 33 variables with "mean()" and 33 variables with "std()" in the names.
@@ -207,7 +209,7 @@ A key assumption I made in choosing what variables to use is that the Johns Hopk
 
 One noticeable aspect of the list of 561 variables is that the original researchers made many baseline calculations on the raw data. In addition to mean and standard deviation, they calculated the median absolute deviation (mad()), the largest and smallest values in the array (max() and min()), the signal magnitude area (sma()), and interquartile range (iqr()), among others, for the major variable groups. 
 
-Then they calculated the meanFreq().  According to the original data project file features_info.txt, "meanFreq(): Weighted average of the frequency components to obtain a mean frequency."  The researchers did not explain why they calculated the mean on frequency but not complete the other baseline calculations on frequency, such as standard deviation. This lead me to believe that the meanFreq() calculations were secondary calculations. Furthermore, including these would unbalance the tidy data set as a whole. 
+Then they calculated the meanFreq().  According to the original data project file __features_info.txt__, "meanFreq(): Weighted average of the frequency components to obtain a mean frequency."  The researchers did not explain why they calculated the mean on frequency but not complete the other baseline calculations on frequency, such as standard deviation. This lead me to believe that the meanFreq() calculations were secondary calculations. Furthermore, including these would unbalance the tidy data set as a whole. 
 
 The excluded “mean” variables for this Johns Hopkins project are below:
 
@@ -311,7 +313,7 @@ The following variables are frequency counterpart measurements to the time measu
 
 ### 8.	List of std() variables used with explanations
 
-The following variables contain the mean value of the standard deviation--std()--variables grouped by subject and activity.
+The following variables contain the mean value of the standard deviation, std(), variables grouped by subject and activity.
 
 The table below lists the time measurements.
 
@@ -356,10 +358,13 @@ The script and results were compiled and run on the following system using RStud
 •	4.00 GB RAM
 
 •	R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+
 •	Copyright (C) 2014 The R Foundation for Statistical Computing
+
 •	Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 •	R package "utils" 3.1.1
+
 •	R package "reshape2" 1.4
 
 ### 2.	Executing the Script
@@ -375,7 +380,7 @@ For the script to run properly, save it to your working directory. After sourcin
 ### 3.	Messages Typed to the Screen
 
 When the script executes, the R system generates three messages to the screen automatically.
-<code>
+'''
 
 trying URL 'http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones'
 Content type 'text/html; charset=UTF-8' length 200 bytes
@@ -390,7 +395,8 @@ downloaded 59.7 Mb
 Warning message:
 In download.file(myurlbook, "human-activity-recognition-using-smartphones.html") :
   downloaded length 9017 != reported length 200
-</code>
+  
+'''
   
 None of these messages has any impact on the script’s execution.
 
