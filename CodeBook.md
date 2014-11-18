@@ -151,7 +151,7 @@ The zipped file includes several data sets that the system extracts into subdire
 
 The data files used for this project consist of nine test subjects, __X_test.txt__ and __y_test.txt__, and 21 evaluated subjects, __X_train.txt__ and __y_train.txt__. The "X" data files contain the calculated data for the variables collected. The "y" data files contain a column with an activity code for each row of data in the corresponding "X" data file. The __subject_test.txt__ and __subject_train.txt__ data files contain a column with the subject id for each row of data in the corresponding "X" data files.
 
-The "X" data sets have separate column names contained in features.txt.
+The "X" data sets have separate column names contained in __features.txt__.
 
 Activity codes in the "X" data sets match one of the six character label names contained in __activity_labels.txt__.
 
