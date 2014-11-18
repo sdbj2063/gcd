@@ -511,9 +511,7 @@ Abstract: Human Activity Recognition database built from the recordings of 30 su
 
 Data Set Characteristics: Multivariate, Time-Series	| Number of Instances:	10299	| Area:	Computer
 --------------------------------------------------- | --------------------------- | ---------------
-
 Attribute Characteristics:	N/A	| Number of Attributes:	561	| Date Donated	2012-12-10
-
 Associated Tasks:	Classification, Clustering	| Missing Values?	N/A	| Number of Web Hits:	125474
 
 #### Source:
