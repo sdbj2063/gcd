@@ -11,61 +11,61 @@ Written by GitHub user sdbj2063. Copyright © 2014 sdbj2063. All Rights Reserved
 ### Table of Contents
 -------------------
 
-I.	Introduction	3
+##### I.	Introduction
 
-II.	Documentation Conventions	3
+##### II.	Documentation Conventions
 
-III.	Assumptions about the Audience	3
+##### III.	Assumptions about the Audience
 
-IV.	Project Requirements	3
+##### IV.	Project Requirements
 
-  1.	List of Deliverables:	3
-  2.	Data Analysis Requirements:	4
+  1.	List of Deliverables
+  2.	Data Analysis Requirements
     
-V.	Original Data Sources	4
+##### V.	Original Data Sources
 
-  1.	URLs	4
-  2.	Licensing Statement from Original Development Team	5
-  3.	Description of Data from the Original Project	5
-  4.	Description of Data Sets	5
-  5.	How Data Knits Together	6
-  6.	Data Files Used with Definitions	6
+  1.	URLs
+  2.	Licensing Statement from Original Development Team
+  3.	Description of Data from the Original Project
+  4.	Description of Data Sets
+  5.	How Data Knits Together
+  6.	Data Files Used with Definitions
     
-VI.	Processing Decisions	6
+##### VI.	Processing Decisions
 
-  1.	R Language Libraries	7
-  2.	Choosing Variables for Mean and Standard Deviation Calculations	7
-  3.	Excluded Variables with “mean” in the Name	7
-  4.	Background on Gyroscopes, Accelerometers and Original Data	8
-  5.	Human-readable Variable Names	9
-  6.	Variable Key Words and Their Meanings	9
-  7.	List of mean() variables used with explanations	10
-  8.	List of std() variables used with explanations	10
+  1.	R Language Libraries
+  2.	Choosing Variables for Mean and Standard Deviation Calculations
+  3.	Excluded Variables with “mean” in the Name
+  4.	Background on Gyroscopes, Accelerometers and Original Data
+  5.	Human-readable Variable Names
+  6.	Variable Key Words and Their Meanings
+  7.	List of mean() variables used with explanations
+  8.	List of std() variables used with explanations
     
-VII.	Running the Script and Key Decision Points	11
+##### VII.	Running the Script and Key Decision Points
 
-  1.	System Configuration	11
-  2.	Executing the Script	12
-  3.	Messages Typed to the Screen	12
-  4.	Downloading and Extracting Files	13
-  5.	Transformation of Data	13
-  6.	Tidy Data Set Results	13
-  7.	The Tidiness of the Data Set	14
+  1.	System Configuration
+  2.	Executing the Script
+  3.	Messages Typed to the Screen
+  4.	Downloading and Extracting Files
+  5.	Transformation of Data
+  6.	Tidy Data Set Results
+  7.	The Tidiness of the Data Set
     
-VIII.	References	15
+##### VIII.	References
 
-Appendix A	16
+##### Appendix A
 
-  Coursera Project Description	16
+  Coursera Project Description
     
-Appendix B	17
+##### Appendix B
 
-  Original Data Set Description	17
-  Feature Selection Information	19
+  Original Data Set Description
+  Feature Selection Information
     
-Appendix C	20
+##### Appendix C	20
 
-  How the Original Data Knits Together	20
+  How the Original Data Knits Together
 
 ## I.	Introduction
 The course “Getting and Cleaning Data” offered by Johns Hopkins University through Coursera has a culminating project. The student must complete an R script that performs data transformation and creates a text file. Part of the project offering is this code book, along with the script, a readme file and the data file.
@@ -85,7 +85,7 @@ This code book assumes the reader only has access to __CodeBook.md__, __run_anal
 
 ## IV.	Project Requirements
 
-### 1.	List of Deliverables:
+### 1.	List of Deliverables
 
   1.	GitHub repository for this Johns Hopkins project, https://github.com/sdbj2063/gcd
   2.	Link to the Github repo
@@ -95,7 +95,7 @@ This code book assumes the reader only has access to __CodeBook.md__, __run_anal
   6.	__run_analysis.R__ in the GitHub repo. The file should have limited comments and perform the 
   required data analysis requirements.
 
-### 2.	Data Analysis Requirements:
+### 2.	Data Analysis Requirements
 An R script titled __run_analysis.R__ must perform the following actions:
 
   1.	Merge the test and training data sets into one data set.
@@ -145,11 +145,11 @@ The data pertaining to this Johns Hopkins project is a collection of 561 attribu
 
 The zipped file includes several data sets that the system extracts into subdirectories in the working directory:
 
-  __/UCI HAR Dataset__
+ 1) __/UCI HAR Dataset__
 
-  __/UCI HAR Dataset/test__
+ 2) __/UCI HAR Dataset/test__
 
-  __/UCI HAR Dataset/train__
+ 3) __/UCI HAR Dataset/train__
 
 The data files used for this project consist of nine test subjects, __X_test.txt__ and __y_test.txt__, and 21 evaluated subjects, __X_train.txt__ and __y_train.txt__. The "X" data files contain the calculated data for the variables collected. The "y" data files contain a column with an activity code for each row of data in the corresponding "X" data file. The __subject_test.txt__ and __subject_train.txt__ data files contain a column with the subject id for each row of data in the corresponding "X" data files.
 
@@ -159,9 +159,9 @@ Activity codes in the "X" data sets match one of the six character label names c
 
 The fully expanded zip file also provides raw data files in subdirectories:
 
-  __/UCI HAR Dataset/test/InertialSignals__
+  1) __/UCI HAR Dataset/test/InertialSignals__
   
-  __/UCI HAR Dataset/train/InertialSignals__
+  2) __/UCI HAR Dataset/train/InertialSignals__
     
 They are not necessary for the purpose of this Johns Hopkins project.
 
@@ -342,7 +342,7 @@ The following variables are frequency counterpart measurements to the time measu
 
 ## VII.	Running the Script and Key Decision Points
 
-The following subsections describe the script development environment and provide directions about using the script and key components of the script’s processing. README.md, included as part of this Johns Hopkins project, contains a step-by-step description of the script's processing.
+The following subsections describe the script development environment and provide directions about using the script and key components of the script’s processing. __README.md__, included as part of this Johns Hopkins project, contains a step-by-step description of the script's processing.
 
 ### 1.	System Configuration
 
@@ -379,23 +379,21 @@ For the script to run properly, save it to your working directory. After sourcin
 ### 3.	Messages Typed to the Screen
 
 When the script executes, the R system generates three messages to the screen automatically.
-'''
 
-trying URL 'http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones'
-Content type 'text/html; charset=UTF-8' length 200 bytes
-opened URL
-downloaded 9017 bytes
+    trying URL 'http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones'
+    Content type 'text/html; charset=UTF-8' length 200 bytes
+    opened URL
+    downloaded 9017 bytes
 
-trying URL 'http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
-Content type 'application/zip' length 62556944 bytes (59.7 Mb)
-opened URL
-downloaded 59.7 Mb
+    trying URL 'http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
+    Content type 'application/zip' length 62556944 bytes (59.7 Mb)
+    opened URL
+    downloaded 59.7 Mb
 
-Warning message:
-In download.file(myurlbook, "human-activity-recognition-using-smartphones.html") :
-  downloaded length 9017 != reported length 200
+    Warning message:
+    In download.file(myurlbook, "human-activity-recognition-using-smartphones.html") :
+    downloaded length 9017 != reported length 200
   
-'''
   
 None of these messages has any impact on the script’s execution.
 
@@ -407,7 +405,7 @@ The script downloads the two files mentioned in Section V.1, “Original Data So
 
 ### 5.	Transformation of Data
 
-Once the script extracts the data from the zip file, the program imports the necessary data files. Please see Section V.6, “Original Data Sources: Data Files Used with Definitions.” Then the script completes the following transformations:
+Once the script extracts the data from the zip file, the program imports the necessary data files. Please see Section V.6, “Original Data Sources, "Data Files Used with Definitions.” Then the script completes the following transformations:
 
 1.  Merges the "subject" data sets, first "test" then "train."
 2.  Merges the "X" data sets, first "test" then "train."
@@ -435,8 +433,11 @@ A correct file contains the following rows of data:
 A correct file contains the following columns, left to right, of data:
 
 •	1x column for subject ids ("SubjectCode") containing an integer 1-30 representing the unique of id of the subject;
+
 •	1x column for activity names ("ActivityCode") containing a character string with the name of the activity;
+
 •	33x columns for variables representing the mean--mean()--of measurements; and
+
 •	33x columns for variables representing the standard deviation--std()--of measurements.
 
 For each combination of subject and activity, the tidy data set contains one row of data with the mean of the data points for that subject/activity combination. Thus, each subject has six rows of data, one for each activity.
