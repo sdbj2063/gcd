@@ -450,9 +450,9 @@ The swirl() exercise for "Getting and Cleaning Data" on tidy data using tidyr() 
 
 The horizontal layout of this report provided a manageable means of visually inspecting the data.
 
-To take this process one step further, I could have created a four-column table with subject, activity, variable name and value. Instead of the numerical variables each forming their own column, each variable name would be a value in the variable column and its subject/activity/variable combination would have one value. In effect, the data would be a three-way intersection (many-to-many) table in a relational diagram.
+To take this process one step further, I could have created a four-column table with subject, activity, variable name and value. Instead of the numerical variables each forming their own column, each variable name would be a value in the variable column and its subject/activity/variable combination would have one value. In effect, the data would be a three-way intersection (many-to-many) table in an entity relationship diagram (ERD).
 
-However, I saw no practical reason for creating one really long, really skinny data set that a user would then have to recombine in order to make sense of the data. For the purposes of enabling student peer evaluators to quickly review the data, the current layout seemed the best approach and closely resembled the original data.
+However, I saw no practical reason for creating one really long, really skinny data set that a user would then have to recombine in order to make sense of the data. __For the purposes of enabling student peer evaluators to quickly review the data,__ the current layout seemed the best approach and closely resembled the layout of the original data.
 
 ## VIII.	References
 
