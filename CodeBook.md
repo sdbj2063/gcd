@@ -145,13 +145,12 @@ The data pertaining to this Johns Hopkins project is a collection of 561 attribu
 
 The zipped file includes several data sets that the system extracts into subdirectories in the working directory:
 
-'''
-    __/UCI HAR Dataset__
+  __/UCI HAR Dataset__
 
-    __/UCI HAR Dataset/test__
+  __/UCI HAR Dataset/test__
 
-    __/UCI HAR Dataset/train__
-'''
+  __/UCI HAR Dataset/train__
+
 The data files used for this project consist of nine test subjects, __X_test.txt__ and __y_test.txt__, and 21 evaluated subjects, __X_train.txt__ and __y_train.txt__. The "X" data files contain the calculated data for the variables collected. The "y" data files contain a column with an activity code for each row of data in the corresponding "X" data file. The __subject_test.txt__ and __subject_train.txt__ data files contain a column with the subject id for each row of data in the corresponding "X" data files.
 
 The "X" data sets have separate column names contained in features.txt.
