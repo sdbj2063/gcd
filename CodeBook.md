@@ -509,11 +509,12 @@ Download: Data Folder, Data Set Description
 
 Abstract: Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.	
 
-Data Set Characteristics:  	Multivariate, Time-Series	Number of Instances:	10299	Area:	Computer
+Data Set Characteristics: Multivariate, Time-Series	| Number of Instances:	10299	| Area:	Computer
+--------------------------------------------------- | --------------------------- | ---------------
 
-Attribute Characteristics:	N/A	Number of Attributes:	561	Date Donated	2012-12-10
+Attribute Characteristics:	N/A	| Number of Attributes:	561	| Date Donated	2012-12-10
 
-Associated Tasks:	Classification, Clustering	Missing Values?	N/A	Number of Web Hits:	125474
+Associated Tasks:	Classification, Clustering	| Missing Values?	N/A	| Number of Web Hits:	125474
 
 #### Source:
 
@@ -569,6 +570,13 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+## Appendix C
+
+### How the Original Data Knits Together
+
+The following diagram illustrates the original data and how it connects to each other plus the transformation process it undergoes through the R script. 
+
 
 
 
