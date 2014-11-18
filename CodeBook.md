@@ -434,9 +434,9 @@ A correct file contains the following columns, left to right, of data:
 
 •	1x column for activity names ("ActivityCode") containing a character string with the name of the activity;
 
-•	33x columns for variables representing the mean--mean()--of measurements; and
+•	33x columns for variables representing the mean, mean(), of measurements; and
 
-•	33x columns for variables representing the standard deviation--std()--of measurements.
+•	33x columns for variables representing the standard deviation, std(), of measurements.
 
 For each combination of subject and activity, the tidy data set contains one row of data with the mean of the data points for that subject/activity combination. Thus, each subject has six rows of data, one for each activity.
 
